@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wanderlust - Your Global Travel Planner</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      
+      tailwind.config = {
+        theme: { extend: { colors: { brand: "#0a4a8a", navy: "#082a5c" } } },
+      };
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-100 text-slate-800">
+    <div class="flex h-screen">
+      <!-- Sidebar -->
+      <aside
+        class="w-64 shrink-0 bg-gradient-to-b from-navy to-[#051a3d] text-white flex flex-col"
+      >
+        <div class="flex items-center gap-3 px-6 py-6 border-b border-white/10">
+          <div
+            class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-brand text-xl"
+          >
+            <i class="fa-solid fa-paper-plane"></i>
+          </div>
+          <span class="text-2xl font-bold">Wanderlust</span>
+        </div>
+
+        <!-- Links are created from app.js -->
+        <nav id="nav" class="flex-1 overflow-y-auto px-3 py-4"></nav>
+
+        <div class="m-4 p-3 rounded-xl bg-white/10 flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-full bg-white text-brand flex items-center justify-center"
+          >
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div>
+            <p class="font-semibold">Traveler</p>
+            <p class="text-sm text-blue-200">Planning mode</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main area -->
+      <div class="flex-1 flex flex-col min-w-0">
+        <header
+          class="bg-white border-b border-slate-200 px-8 py-4 flex items-center justify-between"
+        >
+          <div>
+            <h1 id="page-title" class="text-2xl font-bold"></h1>
+            <p id="page-subtitle" class="text-slate-500 text-sm"></p>
+          </div>
+          <div class="bg-slate-100 rounded-xl px-4 py-2 text-sm text-slate-600">
+            <i class="fa-regular fa-clock mr-2"></i><span id="clock"></span>
+          </div>
+        </header>
+
+        <!-- Every page is shown here -->
+        <main id="view" class="flex-1 overflow-y-auto p-8"></main>
+      </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
